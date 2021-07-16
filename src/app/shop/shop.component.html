@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let prod of produtos">
+            <div class="col-sm-3">
+                <div class="single-shop-product">
+                    <div class="product-upper">
+                        <img src="../../assets/imgs/{{prod.photos}}" alt="">
+                    </div>
+                    <h2><a href="">{{ prod.productName }}</a></h2>
+                    <div class="product-carousel-price">
+                        <ins>R$ {{prod.productPrice}}</ins> <del>R$999.00</del>
+                    </div>
+
+                    <div class="product-option-shop">
+                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                            rel="nofollow" (click)="goToModalComprarByService(prod)">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

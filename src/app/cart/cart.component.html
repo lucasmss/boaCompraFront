@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-content-right">
+                    <div class="woocommerce">
+                        <h1 class="h1Carrinho">Produtos no carrinho</h1>
+                        <form method="post" action="#">
+                            <table cellspacing="0" class="shop_table cart">
+                                <thead>
+                                    <tr>
+                                        <th class="product-name">Produto</th>
+                                        <th class="product-price">Preço</th>
+                                        <th class="product-remove">Remover</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="cart_item" *ngFor="let carrinho of carrinhoUser">
+
+                                        <td class="product-name">
+                                            {{carrinho.products.productName}}
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">{{carrinho.products.productPrice}}</span>
+                                        </td>
+
+                                        <td class="product-remove">
+                                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
+                                            rel="nofollow" (click)="goToModalComprarByService(carrinho.products)">Comprar</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,29 @@
+<div class="header-area">
+  <div class="container">
+    <div class="rowMenu">
+      <div class="col-md-3">
+        <div class="logo">
+          <h1><a href="./"><img src="../../assets/img/BoaCompra.png"></a></h1>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="user-menu ajustMenu">
+          <ul class="nav">
+            <li><a (click)="viewProdutos()"><i class="fas fa-store ajustIcon"></i> Produtos</a></li>
+            <li><a><i class="fas fa-users ajustIcon"></i> Clients</a></li>
+            <li><a><i class="fas fa-percent ajustIcon"></i> Promoções</a></li>
+            <li><a (click)="viewSuporte()"><i class="fas fa-headset ajustIcon"></i> Suporte</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="productsView == true">
+  <app-admin-product></app-admin-product>
+</div>
+
+<div *ngIf="suporteView == true">
+  <app-admin-support></app-admin-support>
+</div>
