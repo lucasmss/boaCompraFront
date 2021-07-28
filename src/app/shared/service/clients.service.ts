@@ -12,15 +12,15 @@ import { Support } from '../model/support.model';
 })
 export class ClientsService {
   
-  apiUrl = "http://localhost:8080/api/v1/clients";
+  apiUrl = "https://boacompralast-api.herokuapp.com/api/v1/clients";
 
-  apiUrlAddress = "http://localhost:8080/api/v1/address";
+  apiUrlAddress = "https://boacompralast-api.herokuapp.com/api/v1/address";
 
-  apiUrlSupport = "http://localhost:8080/api/v1/support";
+  apiUrlSupport = "https://boacompralast-api.herokuapp.com/api/v1/support";
 
-  apiUrlBougth =  "http://localhost:8080/api/v1/bought";
+  apiUrlBougth =  "https://boacompralast-api.herokuapp.com/api/v1/bought";
 
-  apiUrlCart =  "http://localhost:8080/api/v1/shoppingCart";
+  apiUrlCart =  "https://boacompralast-api.herokuapp.com/api/v1/shoppingCart";
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})

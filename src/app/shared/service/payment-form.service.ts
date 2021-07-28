@@ -8,7 +8,7 @@ import { PaymentForm } from '../model/payment-form.module';
 })
 export class PaymentFormService {
 
-  apiUrl = "http://localhost:8080/api/v1/paymentForm";
+  apiUrl = "https://boacompralast-api.herokuapp.com/api/v1/paymentForm";
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})

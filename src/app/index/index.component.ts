@@ -25,8 +25,8 @@ export class IndexComponent implements OnInit {
   authState: any = null;
   userLogin!: string;
 
-  constructor(private afu: AngularFireAuth, public productsService: ProductsService, private router: Router, private dataProductsService: DataProductsService, private serviceClient: ClientsService) { 
- 
+  constructor(private afu: AngularFireAuth, public productsService: ProductsService, private router: Router, private dataProductsService: DataProductsService, private serviceClient: ClientsService) {
+
   }
 
   ngOnInit() {
@@ -39,14 +39,14 @@ export class IndexComponent implements OnInit {
     this.productsService.getProducts().subscribe(data => {
       this.produtos = data
       console.log('aqui', data)
-    }) 
+    })
   }
 
-  getUserLogin(){
+  getUserLogin() {
     this.afu.authState.subscribe(auth => {
       this.authState = auth;
       this.userLogin = this.authState.email;
-      console.log("user",this.userLogin)
+      console.log("user", this.userLogin)
       this.getClients();
     })
   }
@@ -54,21 +54,25 @@ export class IndexComponent implements OnInit {
   getClients() {
     this.serviceClient.getClient().subscribe(data => {
       this.clients = data;
-      this.client = this.clients.find( clients => clients.email == this.userLogin);
+      this.client = this.clients.find(clients => clients.email == this.userLogin);
       console.log('clients', this.client)
-    }) 
+    })
   }
 
-  goToModalComprarByService(prod: Products){
+  goToModalComprarByService(prod: Products) {
     this.dataProductsService.setProductsData(prod);
-    this.router.navigateByUrl('/single-product');
+    if (this.client != null) {
+      this.router.navigateByUrl('/single-product');
+    } else {
+      Swal.fire('Faça o Login!', 'Para realizar a compra!', 'error');
+    }
   }
 
-  addCart(prod: Products){
+  addCart(prod: Products) {
     this.cart.id = 0;
     this.cart.clients = this.client;
     this.cart.products = prod;
-    console.log("addcart",this.cart)
+    console.log("addcart", this.cart)
     this.serviceClient.addCart(this.cart);
     Swal.fire('Adicionado!', 'Produto Adicionado no Carrinho!', 'success');
   }

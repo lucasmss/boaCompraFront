@@ -9,7 +9,7 @@ import { Products } from '../model/products.model';
 export class ProductsService {
 
 
-  apiUrl = "http://localhost:8080/api/v1/products";
+  apiUrl = "https://boacompralast-api.herokuapp.com/api/v1/products";
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
