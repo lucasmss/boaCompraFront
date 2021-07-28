@@ -124,11 +124,15 @@ export class SingleProductComponent implements OnInit {
   }
 
   addCart(){
-    this.cart.id = 0;
-    this.cart.clients = this.client;
-    this.cart.products = this.produtosData;
-    this.serviceClient.addCart(this.cart);
-    Swal.fire('Adicionado!', 'Produto Adicionado no Carrinho!', 'success');
+    if (this.client != null) {
+      this.cart.id = 0;
+      this.cart.clients = this.client;
+      this.cart.products = this.produtosData;
+      this.serviceClient.addCart(this.cart);
+      Swal.fire('Adicionado!', 'Produto Adicionado no Carrinho!', 'success');
+    } else {
+      Swal.fire('Faça o Login!', 'Para adicionar no carrinho!', 'error');
+    }
   }
 
   loadStripe() {
