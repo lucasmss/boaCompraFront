@@ -24,12 +24,14 @@ export class IndexComponent implements OnInit {
   client: any;
   authState: any = null;
   userLogin!: string;
+  mostrarProduto: boolean = false;
 
   constructor(private afu: AngularFireAuth, public productsService: ProductsService, private router: Router, private dataProductsService: DataProductsService, private serviceClient: ClientsService) {
 
   }
 
   ngOnInit() {
+    this.mostrarProd();
     this.getUserLogin();
     this.getProducts();
     this.cart = {};
@@ -38,6 +40,7 @@ export class IndexComponent implements OnInit {
   getProducts() {
     this.productsService.getProducts().subscribe(data => {
       this.produtos = data
+      this.mostrarProd()
       console.log('aqui', data)
     })
   }
@@ -67,14 +70,25 @@ export class IndexComponent implements OnInit {
       Swal.fire('Faça o Login!', 'Para realizar a compra!', 'error');
     }
   }
+  mostrarProd(){
+    if(this.produtos == null){
+      this.mostrarProduto = true;
+    }else {
+      this.mostrarProduto = false;
+    }
+  }
 
   addCart(prod: Products) {
-    this.cart.id = 0;
-    this.cart.clients = this.client;
-    this.cart.products = prod;
-    console.log("addcart", this.cart)
-    this.serviceClient.addCart(this.cart);
-    Swal.fire('Adicionado!', 'Produto Adicionado no Carrinho!', 'success');
+    if (this.client != null) {
+      this.cart.id = 0;
+      this.cart.clients = this.client;
+      this.cart.products = prod;
+      console.log("addcart", this.cart)
+      this.serviceClient.addCart(this.cart);
+      Swal.fire('Adicionado!', 'Produto Adicionado no Carrinho!', 'success');
+    } else {
+      Swal.fire('Faça o Login!', 'Para adicionar no carrinho!', 'error');
+    }
   }
 
 }
