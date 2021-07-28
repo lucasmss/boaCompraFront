@@ -35,7 +35,11 @@ export class ShopComponent implements OnInit {
 
   goToModalComprarByService(prod: Products){
     this.dataProductsService.setProductsData(prod);
-    this.router.navigateByUrl('/single-product')
+    if (this.client != null) {
+      this.router.navigateByUrl('/single-product');
+    } else {
+      Swal.fire('Faça o Login!', 'Para realizar a compra!', 'error');
+    }
   }
 
   addCart(prod: Products){
