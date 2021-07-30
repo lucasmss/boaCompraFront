@@ -1,5 +1,6 @@
 <app-header></app-header>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/i18n/angular-locale_pt-br.js"></script>
 <div class="promo-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -52,7 +53,7 @@
                             <h2><a>{{ prod.productName }}</a></h2>
 
                             <div class="product-carousel-price" >
-                                <ins>R$ {{prod.productPrice}}</ins> <del>R$5000</del>
+                                <ins>{{prod.productPrice | currency:'R$ '}}</ins> <del>R$5000</del>
                             </div>
                             <div class="product-option-shop">
                                 <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
@@ -81,7 +82,7 @@
                             <h2><a>{{ prod.productName }}</a></h2>
 
                             <div class="product-carousel-price" >
-                                <ins>R$ {{prod.productPrice}}</ins> <del>R$5000</del>
+                                <ins>{{prod.productPrice | currency:'R$ '}}</ins> <del>R$5000</del>
                             </div>
                             <div class="product-option-shop">
                                 <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"

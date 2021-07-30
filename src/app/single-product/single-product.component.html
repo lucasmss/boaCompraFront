@@ -1,5 +1,6 @@
 <app-header></app-header>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/i18n/angular-locale_pt-br.js"></script>
 <div class="single-product-area ajusteFundo">
   <div class="zigzag-bottom"></div>
   <div class="container">
@@ -19,7 +20,7 @@
               <div class="product-inner">
                 <h2 class="product-name" id="topPage">{{produtosData.productName}}</h2>
                 <div class="product-inner-price">
-                  <ins>R$ {{produtosData.productPrice}}</ins> <del>$1000.00</del>
+                  <ins>{{produtosData.productPrice | currency:'R$ '}}</ins> <del>$1000.00</del>
                 </div>
                 <form action="" class="cart">
                   <button class="add_to_cart_button" type="submit" (click)="addCart()" class="add-to-cart-link">Carrinho <i class="fa fa-shopping-cart"></i></button>
@@ -166,7 +167,7 @@
                 <h2><a>{{ prod.productName }}</a></h2>
 
                 <div class="product-carousel-price">
-                  <ins>{{ prod.productPrice }}</ins> <del>R$5000</del>
+                  <ins>{{ prod.productPrice | currency:'R$ '}}</ins> <del>R$5000</del>
                 </div>
                 <div class="product-option-shop">
                   <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"

@@ -1,8 +1,10 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/i18n/angular-locale_pt-br.js"></script>
 <div class="container">
     <div class="row">
       <div class="ajusteH3 col-6">
         <h2>Valor em Estoque</h2>
-        <h3>{{valorTotalEstoque}}</h3>
+        <h3>{{valorTotalEstoque | currency:'R$ '}}</h3>
       </div>
       <div class="ajusteH3 col-6">
         <h2>Total de Produtos</h2>
