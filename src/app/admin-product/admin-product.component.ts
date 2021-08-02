@@ -46,9 +46,9 @@ export class AdminProductComponent implements OnInit {
       this.produtoPreco = this.produtos.map(function(item){
         return item.productPrice;
      })
-      this.totalNoEstoqueProducts = this.produtoQuantidade.reduce((total: any, productQuatity: any) => total + productQuatity);
-      this.totalProductsPrice = this.produtoPreco.reduce((total: any, productPrice: any) => total + productPrice);
-      this.valorTotalEstoque = this.totalNoEstoqueProducts * this.totalProductsPrice;   
+      this.totalNoEstoqueProducts = this.produtoQuantidade.reduce((total: any, productQuatity: any) => parseFloat(total) + parseFloat(productQuatity));
+      this.totalProductsPrice = this.produtoPreco.reduce((total: any, productPrice: any) => parseFloat(total) + parseFloat(productPrice));
+      this.valorTotalEstoque = parseFloat(this.totalNoEstoqueProducts) * parseFloat(this.totalProductsPrice);   
     }) 
   }
 
