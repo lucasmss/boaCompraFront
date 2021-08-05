@@ -36,3 +36,16 @@
 .tituloTabela {
   margin-bottom: 1em;
 }
+@media only screen and (max-width: 600px)  {
+  .related-products-carousel{
+      display: grid;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+  }
+  .owl-carousel.owl-loaded {
+    display: grid;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+}
+

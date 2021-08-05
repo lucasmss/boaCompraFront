@@ -101,10 +101,21 @@ body {
     width: 100%;
     z-index: 999;
 }
+@media (max-width: 530px) {
+    .logo{
+        margin-top: 0;
+        margin-bottom: 4em; 
+    }
+    .owl-carousel.owl-loaded {
+        display: grid;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+      }
+}
 
 .logo h1 {
     font-size: 40px;
-    margin: 30px 0;
+    margin: 10px 0;
     font-weight: 400;
 }
 

@@ -1,6 +1,6 @@
 .botaoHome {
-  margin-left: 32em;
-  margin-top: 5em;
+  margin-left: 46%;
+  margin-top: 5%;
 }
 
 ngb-carousel .wrapper {
@@ -22,7 +22,6 @@ ngb-carousel .wrapper>img {
   flex-wrap: nowrap;
   justify-content: space-around;
 }
-
 .subIndex {
   margin-top: 2em;
 }
@@ -31,4 +30,17 @@ ngb-carousel .wrapper>img {
 }
 .maincontent-area {
   background-color: #f4f4f4;
+}
+@media only screen and (max-width: 600px)  {
+  .related-products-carousel{
+      display: grid;
+      flex-wrap: nowrap;
+      margin-bottom: 3em;
+      justify-content: space-around;
+  }
+  .owl-carousel.owl-loaded {
+    display: grid;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
 }

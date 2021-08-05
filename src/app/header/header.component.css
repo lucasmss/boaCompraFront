@@ -4,6 +4,9 @@
 }
 .ajustMenu {
     margin-top: 3em;
+    text-align: center;
+    float: left;
+    margin-top: -76px;
 }
 .ajustIcon {
     margin-right: 0.3em;
@@ -12,11 +15,14 @@
 .menuPrincipal{
     background-color: #f8f8f8;
 }
-.container {
-    padding-left: 0;
-}
 .liNav {
     display: block;
-    margin-left: 10em;;
+    text-align: center;
+}
+#navbarAjuste {
+    margin-left: 6em;
+}
+.navbar {
+    margin-bottom: 0px;
 }
 
